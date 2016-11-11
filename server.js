@@ -2,8 +2,8 @@ var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 
-var index = require('./rotes/index');
-var task = require('./rotes/task');
+var index = require('./routes/index');
+var task = require('./routes/task');
 
 var port = 3000;
 
