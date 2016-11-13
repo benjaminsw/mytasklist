@@ -55,7 +55,15 @@ router.delete('/tasks/:id', function (req, res, next) {
 });
 
 //update task
-router.delete('/tasks/:id', function (req, res, next) {
+router.put('/tasks/:id', function (req, res, next) {
+    var task = req.body;
+    var updTask = {};
+
+    if (task.isDone) {
+        updTask.isDone = task.isDone;
+    }
+
+
     //res.render('index.html');
     db.tasks.remove({ _id: mongojs.ObjectId(req.param.id) }, function (err, task) {
         if (err) {
