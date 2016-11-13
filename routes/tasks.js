@@ -54,4 +54,15 @@ router.delete('/tasks/:id', function (req, res, next) {
     });
 });
 
+//update task
+router.delete('/tasks/:id', function (req, res, next) {
+    //res.render('index.html');
+    db.tasks.remove({ _id: mongojs.ObjectId(req.param.id) }, function (err, task) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(task);
+    });
+});
+
 module.exports = router;
