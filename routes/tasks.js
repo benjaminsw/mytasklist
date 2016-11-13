@@ -72,15 +72,15 @@ router.put('/tasks/:id', function (req, res, next) {
         res.json({
             "error": "Bad Date"
         });
+    } else {
+        db.tasks.update({ _id: mongojs.ObjectId(req.param.id)}, updTask, {}, function (err, task) {
+            if (err) {
+                res.send(err);
+            }
+            res.json(task);
+        });
     }
-
-    //res.render('index.html');
-    db.tasks.remove({ _id: mongojs.ObjectId(req.param.id) }, function (err, task) {
-        if (err) {
-            res.send(err);
-        }
-        res.json(task);
-    });
+    
 });
 
 module.exports = router;
