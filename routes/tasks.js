@@ -63,6 +63,11 @@ router.put('/tasks/:id', function (req, res, next) {
         updTask.isDone = task.isDone;
     }
 
+    if (task.title) {
+        updTask.title = task.title;
+    }
+
+    if
 
     //res.render('index.html');
     db.tasks.remove({ _id: mongojs.ObjectId(req.param.id) }, function (err, task) {
