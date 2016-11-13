@@ -67,7 +67,12 @@ router.put('/tasks/:id', function (req, res, next) {
         updTask.title = task.title;
     }
 
-    if
+    if (!updTask) {
+        res.status(400);
+        res.json({
+            "error": "Bad Date"
+        });
+    }
 
     //res.render('index.html');
     db.tasks.remove({ _id: mongojs.ObjectId(req.param.id) }, function (err, task) {
