@@ -43,4 +43,15 @@ router.post('/task', function (req, res, next) {
     }
 });
 
+//delete task
+router.get('/tasks/:id', function (req, res, next) {
+    //res.render('index.html');
+    db.tasks.findOne({ _id: mongojs.ObjectId(req.param.id) }, function (err, task) {
+        if (err) {
+            res.send(err);
+        }
+        res.json(task);
+    });
+});
+
 module.exports = router;
