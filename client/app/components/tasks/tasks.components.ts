@@ -5,4 +5,4 @@
     templateUrl: 'tasks.component.html'
 })
 
-export class AppComponent { }
+export class TasksComponent { }
