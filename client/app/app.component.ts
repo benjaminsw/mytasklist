@@ -2,7 +2,7 @@
 
 @Component({
     selector: 'my-app',
-    template: '<h1>Hello Angular!</h1>'
+    template: '<tasks></tasks>'
 })
 
 export class AppComponent { }
