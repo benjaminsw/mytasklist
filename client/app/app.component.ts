@@ -2,7 +2,7 @@
 
 @Component({
     selector: 'my-app',
-    template: '<tasks></tasks>'
+    template: 'app.component.html'
 })
 
 export class AppComponent { }
