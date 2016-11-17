@@ -7,4 +7,8 @@ export class TaskService {
     constructor(private http: Http) {
         console.log('Task Service Initialised ...');
     }
+    getTask() {
+        return this.http.get('http://localhost:3000/api/tasks')
+            .map(res => res.json());
+    }
 }
