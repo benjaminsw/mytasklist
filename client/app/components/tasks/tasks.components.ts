@@ -20,6 +20,15 @@ export class TasksComponent {
     addTask(event) {
         event.preventDefault();
         console.log(this.title);
+        var newTask = {
+            title: this.title,
+            isDone: fasle
+        }
+        this.taskService.addTask(newTask)
+            .subcribe(task => {
+                this.tasks.push(task);
+                this.title = '';
+            });
     }
 
 }
