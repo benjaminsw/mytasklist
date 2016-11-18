@@ -9,11 +9,17 @@ import {Task} from '../../../Task';
 
 export class TasksComponent {
     tasks: Task[];
-
+    title: string;
     constructor(private taskService:TaskService) {
         this.taskService.getTasks()
             .subscribe(tasks => {
                 this.tasks = tasks;
             });
     }
+
+    addTask(event) {
+        event.preventDefault();
+        console.log(this.title);
+    }
+
 }
