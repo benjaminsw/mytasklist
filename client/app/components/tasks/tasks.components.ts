@@ -8,6 +8,8 @@ import {TaskService} from '../../services/task.service';
 })
 
 export class TasksComponent {
+    tasks: Task[];
+
     constructor(private taskService:TaskService) {
         this.taskService.getTasks()
             .subscribe(tasks => {
