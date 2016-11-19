@@ -14,7 +14,7 @@ export class TaskService {
     addTask(newTask) {
         var header = new Headers();
         headers.append('Content-Type', 'applicatio/json');
-        return this.http.post('http://localhost:3000/task', JSON.stringify(newTask), { headers: headers });
+        return this.http.post('http://localhost:3000/api/task', JSON.stringify(newTask), { headers: headers });
         .map(res => res.json());
 
     }
