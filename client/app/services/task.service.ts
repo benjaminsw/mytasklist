@@ -11,4 +11,11 @@ export class TaskService {
         return this.http.get('http://localhost:3000/api/tasks')
             .map(res => res.json());
     }
+    addTask(newTask) {
+        var header = new Headers();
+        headers.append('Content-Type', 'applicatio/json');
+        return this.http.post('http://localhost:3000/task', JSON.stringify(newTask), { headers: headers });
+        .map(res => res.json());
+
+    }
 }
