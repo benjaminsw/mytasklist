@@ -43,4 +43,7 @@ export class TasksComponent {
             }
         });
     }
+    updateStatus() {
+
+    }
 }
