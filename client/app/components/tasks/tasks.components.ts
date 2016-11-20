@@ -43,7 +43,14 @@ export class TasksComponent {
             }
         });
     }
-    updateStatus() {
-
+    updateStatus(task) {
+        var _task = {
+            _id: task._id,
+            title: task.title,
+            isDone: !task.isDone
+        };
+        this.taskService.updateStatus(_task).subscribe(data => {
+            task.isDone = !task.isDone;
+        });
     }
 }
